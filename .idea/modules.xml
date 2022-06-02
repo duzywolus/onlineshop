@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OnlineShopWebParent/OnlineShopBackEnd/OnlineShopBackEnd.iml" filepath="$PROJECT_DIR$/OnlineShopWebParent/OnlineShopBackEnd/OnlineShopBackEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineShopCommon/OnlineShopCommon.iml" filepath="$PROJECT_DIR$/OnlineShopCommon/OnlineShopCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineShopWebParent/OnlineShopFrontEnd/OnlineShopFrontEnd.iml" filepath="$PROJECT_DIR$/OnlineShopWebParent/OnlineShopFrontEnd/OnlineShopFrontEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineShopProject.iml" filepath="$PROJECT_DIR$/OnlineShopProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OnlineShopWebParent/OnlineShopWebParent.iml" filepath="$PROJECT_DIR$/OnlineShopWebParent/OnlineShopWebParent.iml" />
+    </modules>
+  </component>
+</project>
