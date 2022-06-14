@@ -10,4 +10,6 @@ import com.onlineshop.common.entity.Brand;
 public interface BrandRepository extends PagingAndSortingRepository<Brand, Integer> {
 	
 	public Long countById(Integer id);
+	
+	public Brand findByName(String name);
 }
