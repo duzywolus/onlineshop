@@ -10,12 +10,11 @@
         <a th:href="@{/brands/new}" class="fas fa-plus fa-2x icon-dark mr-2"></a>
         &nbsp;
         <a th:href="@{/brands/export/csv}" class="fas fa-file-csv fa-2x icon-dark mr-2"></a>
-
     </div>
     
     
     
-    <div th:replace="fragments :: search_form_and_message('/brands/page/1')"/>
+    <div th:replace="fragments :: search_form_and_message('/brands/page/1')"></div>
     
     <div class="full-details">
 	    <table class="table table-bordered table-striped table-hover table-responsive-xl">
@@ -23,7 +22,7 @@
 			    <tr>
 			    	<th>ID</th>
 			    	<th>Brand Logo</th>
-			    	<th>Brand Name</th>
+			    	<th th:replace="fragments :: column_link('/brands', 'name', 'Brand Name', 'none')"/>
 			    	<th>Categories</th>
 			    	<th>Actions</th>
 			    </tr>
@@ -54,34 +53,25 @@
     </div>
     
     <div class="less-details">
-    	<div th:each="category : ${listCategories}" class="row m-1">
+    	<div th:each="brand : ${listBrands}" class="row m-1">
    			<div class="col-4">
-    			<img th:src="@{${category.imagePath}}" style="width: 100px" class="img-fluid">
+    			<img th:src="@{${brand.logoPath}}" style="width: 100px" class="img-fluid">
     		</div>
     		<div class="col-8">
-    			<div>[[${category.name}]]</div>
+    			<div>[[${brand.name}]]</div>
     			<div>
-    				<div th:replace="fragments :: status(${category.enabled}, 'category', '/categories/' + ${category.id})"></div>
+    				<div th:replace="fragments :: edit('brand', '/brands/edit/' + ${brand.id})"></div>
     				&nbsp;
-    				<div th:replace="fragments :: edit('category', '/categories/edit/' + ${category.id})"></div>
-    				&nbsp;
-    				<div th:replace="fragments :: delete('category', ${category.id}, '/categories/delete/' + ${category.id}, ${!category.hasChildren})"></div>
+    				<div th:replace="fragments :: delete('brand', ${brand.id}, '/brands/delete/' + ${brand.id}, 'none')"></div>
     			</div>
     		</div>
     		<div>&nbsp;</div>
     	</div>
     </div>
     
-    <div th:if="${keyword != null}" class="text-center">
-    	<span>Search result does not show categories in hierarchical form</span>
-    	<div th:replace="fragments :: pagination('/categories', 'categories')"></div>
-    </div>
+    <div th:replace="fragments :: pagination('/brands', 'brands')"></div>
     
-    <th:block th:unless="${keyword != null}">
-    	<div th:replace="fragments :: pagination('/categories', 'top-level-categories')"></div>
-    </th:block>
-    
-    <div th:replace="modal_fragments :: confirm_modal"/>
+    <div th:replace="modal_fragments :: confirm_modal"></div>
     
     <div th:replace="fragments :: footer"></div>
  

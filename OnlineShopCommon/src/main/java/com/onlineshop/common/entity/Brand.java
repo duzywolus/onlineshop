@@ -125,7 +125,7 @@ public class Brand {
 		if (this.id == null) {
 			return "/images/image-thumbnail.png";
 		} else 
-		return "brand-logos/" + this.id + "/" + this.logo;
+		return "/brand-logos/" + this.id + "/" + this.logo;
 	}
 	
 	
